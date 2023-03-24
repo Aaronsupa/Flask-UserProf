@@ -1,0 +1,18 @@
+{% extends "home.html" %}
+{% block content %}
+<form method="POST">
+    {% for suggest in suggestions.values() %}
+    <p> {{ suggest }}</p>
+    {% endfor %}
+
+    {{ my_form.hidden_tag() }}
+    <p>
+        {{ my_form.sugg.label }}
+    </p>
+    <p>
+        {{ my_form.sugg() }}
+        {{ my_form.sub() }}
+    </p>
+
+</form>
+{% endblock %}
