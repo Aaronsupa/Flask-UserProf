@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    {% block content %}
+    <h1>Italian Food</h1>
+    {%for x in range(recipes.values() | length)%}
+    <p>{{ recipes[x] }} : {{ types[x] }}</p>
+    {% endfor %}
+    <form action = "/" method="POST">
+        <p>
+            <label for="newRec">Name:</label>
+            <input type="text" name="newRec"/>
+        </p>
+        <p>
+            <label for="newDesc">Name:</label>
+            <input type="text" name="newDesc"/>
+        </p>
+        <p><input type="submit" name="submit_recipe"/></p>
+    </form>
+    {% endblock %}
+  </body>
+</html>
